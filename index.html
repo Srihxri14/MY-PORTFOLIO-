@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SRIHARI DOUNDE | Spatial UI Portfolio & 3D Interactive Universe</title>
+  <meta name="description" content="Spatial UI portfolio of Srihari Dounde - AI & Computer Vision Engineer, Machine Learning Developer, and State-Ranked Tennis Champion at IFHE University.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Spatial CSS -->
+  <link rel="stylesheet" href="css/spatial.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- WebGL Background Canvas (Interactive Cosmic Stardust & Spatial Nebula) -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Ambient Blurred Glow Orbs -->
+  <div class="ambient-orb orb-cyan"></div>
+  <div class="ambient-orb orb-purple"></div>
+  <div class="ambient-orb orb-lime"></div>
+
+  <!-- Cursor Ambient Spotlight -->
+  <div class="spatial-cursor-glow"></div>
+
+  <!-- MAIN SPATIAL CONTAINER -->
+  <div class="spatial-app">
+
+    <!-- ====================================================================
+         HERO SECTION: 3D FACE & SPATIAL PORTAL
+         ==================================================================== -->
+    <section id="hero" class="hero-section">
+      <div class="hero-grid">
+        
+        <!-- Left: Hero Overview & Bio -->
+        <div class="hero-content reveal-on-scroll is-visible">
+          
+          <div class="hero-badge-container">
+            <div class="status-indicator">
+              <span class="status-pulse"></span>
+              Available for AI / ML & Software Roles
+            </div>
+            <div class="spatial-tag">IFHE University • Hyderabad</div>
+          </div>
+
+          <h1 class="hero-name-title">
+            <span class="hero-name-gradient">SRIHARI DOUNDE</span>
+          </h1>
+
+          <div class="hero-role">
+            <span class="hero-role-pill">AI & Computer Vision Engineer</span>
+            <span>•</span>
+            <span style="color: var(--tennis-neon);">State Tennis Champion</span>
+          </div>
+
+          <p class="hero-bio">
+            Driven Computer Science undergraduate combining deep learning algorithms, 
+            real-time computer vision pipelines, and disciplined athletic championship focus. 
+            Transforming complex visual and time-series data into production-ready intelligence.
+          </p>
+
+          <!-- Quick Stats Row -->
+          <div class="hero-stats-row">
+            <div class="hero-stat-card">
+              <span class="stat-value">7.71</span>
+              <span class="stat-label">CGPA (IFHE CS)</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: var(--tennis-neon);">#1</span>
+              <span class="stat-label">State Rank Tennis</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="stat-value" style="color: var(--cyan-neon);">4+</span>
+              <span class="stat-label">Production Projects</span>
+            </div>
+          </div>
+
+          <!-- Hero Action Buttons -->
+          <div class="hero-actions">
+            <a href="#projects" class="spatial-btn spatial-btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Explore Spatial Projects
+            </a>
+            <a href="https://linkedin.com/in/sriharidounde" target="_blank" rel="noopener noreferrer" class="spatial-btn spatial-btn-glass">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              LinkedIn Profile
+            </a>
+            <a href="#contact" class="spatial-btn spatial-btn-glass">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Connect
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right: 3D Face Hologram & Interactive Audio HUD -->
+        <div class="face-3d-portal reveal-on-scroll is-visible" style="animation-delay: 0.2s;">
+          <div class="face-3d-container spatial-glass">
+            
+            <!-- Three.js 3D WebGL Canvas -->
+            <canvas id="face-canvas"></canvas>
+
+            <!-- Holographic Scanline Overlay -->
+            <div class="hologram-scanline"></div>
+
+            <!-- Top HUD Bar -->
+            <div class="face-top-bar">
+              <div class="holo-badge">
+                <span class="holo-dot"></span>
+                <span>AI AVATAR • REAL-TIME LIP SYNC</span>
+              </div>
+
+              <!-- Presentation Mode Selector -->
+              <div class="face-mode-selector">
+                <button class="mode-btn active" data-mode="natural" title="Ultra HD Photorealistic Portrait">Natural</button>
+                <button class="mode-btn" data-mode="hologram" title="Spatial Hologram Mode">Holo</button>
+                <button class="mode-btn" data-mode="cyber" title="AI Vision Tracking Reticle">Cyber</button>
+              </div>
+            </div>
+
+            <!-- Floating Spatial Speech Bubble -->
+            <div class="speech-bubble" id="speech-bubble">
+              <div class="bubble-header">
+                <div class="bubble-speaker">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                  SRIHARI (AI VOICE)
+                </div>
+                <div class="voice-wave-container">
+                  <span class="voice-bar"></span>
+                  <span class="voice-bar"></span>
+                  <span class="voice-bar"></span>
+                  <span class="voice-bar"></span>
+                  <span class="voice-bar"></span>
+                </div>
+              </div>
+              <div class="bubble-text" id="bubble-text">
+                "Hi, I am SRIHARI! Welcome to my spatial portfolio."
+              </div>
+            </div>
+
+            <!-- Bottom HUD: SAY HI Button & Interactive Controls -->
+            <div class="face-bottom-hud">
+              <button class="say-hi-trigger" id="say-hi-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                <span class="say-hi-text">Say Hi (Hear Srihari)</span>
+              </button>
+
+              <button class="hud-icon-btn" id="tilt-angle-btn" title="Toggle 3D Profile Angle">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 21h5v-5"/></svg>
+              </button>
+
+              <button class="hud-icon-btn" id="reset-angle-btn" title="Center 3D Head">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         ABOUT & THE DUAL CHAMPION JOURNEY
+         ==================================================================== -->
+    <section id="about">
+      <div class="section-header reveal-on-scroll">
+        <div class="spatial-tag">Identity Architecture</div>
+        <h2 class="section-title">The Analytical Mind & The Athletic Heart</h2>
+        <p class="section-subtitle">
+          Fusing computer science rigor with the intense split-second focus of competitive sports.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        
+        <!-- The AI Engineer -->
+        <div class="spatial-glass tilt-card dual-card reveal-on-scroll">
+          <div class="tilt-inner">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem;">
+              <span class="card-badge badge-ai">Computer Science & AI</span>
+              <span class="window-chip">IFHE Hyderabad '27</span>
+            </div>
+            
+            <h3 class="dual-title">Engineering Intelligent Systems</h3>
+            <p class="dual-desc">
+              Strong foundation in machine learning, deep neural architectures, and real-time computer vision pipelines. Experienced in taking raw camera streams and time-series data to build predictive and diagnostic systems.
+            </p>
+
+            <ul class="feature-list">
+              <li class="feature-item">
+                <span class="feature-bullet bullet-cyan"></span>
+                <span><strong>Computer Vision:</strong> Image segmentation, leaf pathology identification, facial recognition, OpenCV & PyTorch.</span>
+              </li>
+              <li class="feature-item">
+                <span class="feature-bullet bullet-cyan"></span>
+                <span><strong>Predictive Modeling:</strong> Energy grid load forecasting, anomaly classification, and statistical regression.</span>
+              </li>
+              <li class="feature-item">
+                <span class="feature-bullet bullet-cyan"></span>
+                <span><strong>Systems Architecture:</strong> Enterprise Java development, JDBC, relational SQL databases, and OOP design.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- The Tennis Champion -->
+        <div class="spatial-glass tilt-card dual-card reveal-on-scroll" style="animation-delay: 0.15s;">
+          <div class="tilt-inner">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem;">
+              <span class="card-badge badge-tennis">Competitive Sports</span>
+              <span class="window-chip" style="color: var(--tennis-neon); border-color: rgba(212,225,87,0.3);">State Rank #1</span>
+            </div>
+            
+            <h3 class="dual-title">High-Pressure Athletic Excellence</h3>
+            <p class="dual-desc">
+              Decorated state champion tennis player representing Telangana at national and Asian levels. Bringing supreme physical endurance, cognitive focus, and relentless work ethic directly into software engineering.
+            </p>
+
+            <ul class="feature-list">
+              <li class="feature-item">
+                <span class="feature-bullet bullet-lime"></span>
+                <span><strong>State Rank 1 (U12 & U14):</strong> Decorated Telangana State Tennis Champion with high-performance ranking.</span>
+              </li>
+              <li class="feature-item">
+                <span class="feature-bullet bullet-lime"></span>
+                <span><strong>Sports Head – Tennis:</strong> Led and organized university-level tournaments and managed varsity training at IFHE.</span>
+              </li>
+              <li class="feature-item">
+                <span class="feature-bullet bullet-lime"></span>
+                <span><strong>Asian Junior Circuit:</strong> Competed in elite international tournaments, cultivating disciplined resilience under pressure.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         PROJECTS SECTION (SPATIAL 3D CARDS WITH INTERACTIVE SIMULATORS)
+         ==================================================================== -->
+    <section id="projects">
+      <div class="section-header reveal-on-scroll">
+        <div class="spatial-tag">Production Implementations</div>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">
+          Explore computer vision applications, ML anomaly forecasters, and enterprise software systems with interactive live simulators.
+        </p>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="project-filter-bar reveal-on-scroll">
+        <button class="filter-pill active" data-filter="all">All Projects (4)</button>
+        <button class="filter-pill" data-filter="ai-cv">Computer Vision & AI</button>
+        <button class="filter-pill" data-filter="ml">Machine Learning</button>
+        <button class="filter-pill" data-filter="systems">Java Systems</button>
+      </div>
+
+      <!-- Dynamic Projects Grid -->
+      <div class="projects-grid" id="projects-grid">
+        <!-- Rendered by js/projects.js -->
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         TECHNICAL SKILLS MATRIX
+         ==================================================================== -->
+    <section id="skills">
+      <div class="section-header reveal-on-scroll">
+        <div class="spatial-tag">Technical Competencies</div>
+        <h2 class="section-title">Skills & Technologies</h2>
+        <p class="section-subtitle">
+          Core technologies, frameworks, and tools deployed in academic research and industry internship.
+        </p>
+      </div>
+
+      <div class="skills-grid">
+        
+        <!-- Languages -->
+        <div class="spatial-glass tilt-card skill-category-card reveal-on-scroll">
+          <div class="tilt-inner">
+            <h3 class="skill-cat-title">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--cyan-neon);"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              Programming
+            </h3>
+            <div class="skill-pills-wrap">
+              <span class="skill-badge">🐍 Python (Core & Advanced)</span>
+              <span class="skill-badge">☕ Java (OOP & JDBC)</span>
+              <span class="skill-badge">📊 SQL & Relational DB</span>
+              <span class="skill-badge">⚙️ C / C++ Fundamentals</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI & Data Science -->
+        <div class="spatial-glass tilt-card skill-category-card reveal-on-scroll" style="animation-delay: 0.1s;">
+          <div class="tilt-inner">
+            <h3 class="skill-cat-title">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--purple-neon);"><path d="M12 2a4 4 0 0 0-4 4v2a4 4 0 0 0 8 0V6a4 4 0 0 0-4-4Z"/><path d="M18 10a6 6 0 0 1-12 0"/><path d="M12 16v6"/><path d="M8 22h8"/></svg>
+              AI & Computer Vision
+            </h3>
+            <div class="skill-pills-wrap">
+              <span class="skill-badge">👁️ Computer Vision</span>
+              <span class="skill-badge">🖼️ OpenCV Library</span>
+              <span class="skill-badge">🧠 Deep Learning & CNNs</span>
+              <span class="skill-badge">📈 Machine Learning</span>
+              <span class="skill-badge">🔬 Scikit-Learn</span>
+              <span class="skill-badge">📉 Predictive Modeling</span>
+              <span class="skill-badge">🧹 Data Preprocessing</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spoken & Leadership -->
+        <div class="spatial-glass tilt-card skill-category-card reveal-on-scroll" style="animation-delay: 0.2s;">
+          <div class="tilt-inner">
+            <h3 class="skill-cat-title">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--tennis-neon);"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              Communication & Languages
+            </h3>
+            <div class="skill-pills-wrap">
+              <span class="skill-badge">🌐 English (Fluent)</span>
+              <span class="skill-badge">🇮🇳 Hindi</span>
+              <span class="skill-badge">🗣️ Telugu</span>
+              <span class="skill-badge">🗣️ Marathi</span>
+              <span class="skill-badge">🏆 Sports Leadership</span>
+              <span class="skill-badge">🤝 Teamwork & Agility</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         WORK EXPERIENCE & EDUCATION TIMELINE
+         ==================================================================== -->
+    <section id="timeline">
+      <div class="section-header reveal-on-scroll">
+        <div class="spatial-tag">Career Milestones</div>
+        <h2 class="section-title">Experience & Education</h2>
+        <p class="section-subtitle">
+          Academic achievements, practical industry internships, and foundational education.
+        </p>
+      </div>
+
+      <div class="timeline-container">
+        
+        <!-- Experience: YBI Foundation -->
+        <div class="timeline-item reveal-on-scroll">
+          <div class="timeline-node"></div>
+          <div class="spatial-glass timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-title">Data Science & AI Intern</h3>
+                <div class="timeline-org">YBI Foundation</div>
+              </div>
+              <span class="timeline-date">June 2, 2025 – July 25, 2025</span>
+            </div>
+            <p class="timeline-body">
+              Completed an intensive 2-month internship applying core machine learning algorithms, 
+              statistical data analysis, and predictive modeling techniques using Python to solve real-world industry problems. 
+              Built data extraction pipelines and evaluated regression and classification model performance metrics.
+            </p>
+          </div>
+        </div>
+
+        <!-- Education: B.Tech IFHE -->
+        <div class="timeline-item reveal-on-scroll">
+          <div class="timeline-node timeline-node-purple"></div>
+          <div class="spatial-glass timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-title">B.Tech in Computer Science</h3>
+                <div class="timeline-org">IFHE University, Hyderabad</div>
+              </div>
+              <span class="timeline-date">2023 – Present</span>
+            </div>
+            <p class="timeline-body">
+              <strong>Cumulative CGPA: 7.71 / 10</strong> (Semesters 1–6). Coursework in Data Structures & Algorithms, 
+              Object-Oriented Programming (Java), Operating Systems, Relational Database Management, Machine Learning, and Computer Vision. 
+              Active participant in technical symposiums and Sports Head of Tennis varsity.
+            </p>
+          </div>
+        </div>
+
+        <!-- Education: Intermediate -->
+        <div class="timeline-item reveal-on-scroll">
+          <div class="timeline-node timeline-node-lime"></div>
+          <div class="spatial-glass timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-title">Intermediate (Class XII)</h3>
+                <div class="timeline-org">Ayati Junior College (Yr 2) / Deeksha Junior College (Yr 1)</div>
+              </div>
+              <span class="timeline-date">2021 – 2023</span>
+            </div>
+            <p class="timeline-body">
+              <strong>Aggregate Score: 902 / 1000 (90.2%)</strong>. Focused on Mathematics, Physics, and Chemistry (MPC stream).
+            </p>
+          </div>
+        </div>
+
+        <!-- Education: School -->
+        <div class="timeline-item reveal-on-scroll">
+          <div class="timeline-node"></div>
+          <div class="spatial-glass timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-title">Secondary School (Class X)</h3>
+                <div class="timeline-org">Bolton School</div>
+              </div>
+              <span class="timeline-date">2020 – 2021</span>
+            </div>
+            <p class="timeline-body">
+              <strong>Aggregate: 92%</strong>. Distinction across Mathematics and Sciences while actively competing in junior tennis tournaments.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         ACHIEVEMENTS & HONORS
+         ==================================================================== -->
+    <section id="achievements">
+      <div class="section-header reveal-on-scroll">
+        <div class="spatial-tag">Distinctions</div>
+        <h2 class="section-title">Achievements & Honors</h2>
+        <p class="section-subtitle">
+          National and state-level accolades earned on the tennis circuit and university leadership.
+        </p>
+      </div>
+
+      <div class="achievements-grid">
+        
+        <div class="spatial-glass tilt-card trophy-card reveal-on-scroll">
+          <div class="tilt-inner" style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+            <div class="trophy-icon-wrap">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.45 1-1 1H7c-.55 0-1 .45-1 1v1h12v-1c0-.55-.45-1-1-1h-2c-.55 0-1-.45-1-1v-2.34"/><path d="M4.5 4H19.5c0 4.5-3.5 8-7.5 8s-7.5-3.5-7.5-8Z"/></svg>
+            </div>
+            <h3 class="trophy-title">State Rank 1 – Tennis</h3>
+            <p class="trophy-desc">
+              Ranked No. 1 in Telangana (U12 & U14, 2017–2018). Represented Telangana in national-level junior circuits and crowned state champion.
+            </p>
+          </div>
+        </div>
+
+        <div class="spatial-glass tilt-card trophy-card reveal-on-scroll" style="animation-delay: 0.1s;">
+          <div class="tilt-inner" style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+            <div class="trophy-icon-wrap" style="color: var(--cyan-neon); border-color: rgba(0,242,254,0.4); background: radial-gradient(circle, rgba(0,242,254,0.2) 0%, transparent 70%);">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="trophy-title">Sports Head – Tennis</h3>
+            <p class="trophy-desc">
+              Appointed Sports Head at IFHE University. Organized university tournaments, managed varsity practices, and mentored incoming athletes.
+            </p>
+          </div>
+        </div>
+
+        <div class="spatial-glass tilt-card trophy-card reveal-on-scroll" style="animation-delay: 0.2s;">
+          <div class="tilt-inner" style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+            <div class="trophy-icon-wrap" style="color: var(--purple-neon); border-color: rgba(157,78,221,0.4); background: radial-gradient(circle, rgba(157,78,221,0.2) 0%, transparent 70%);">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+            </div>
+            <h3 class="trophy-title">Asian Junior Circuit</h3>
+            <p class="trophy-desc">
+              Competed at Asian-level junior tournaments against elite international players, demonstrating disciplined tactical execution under pressure.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CONTACT & SPATIAL COMMUNICATOR
+         ==================================================================== -->
+    <section id="contact">
+      <div class="contact-card spatial-glass reveal-on-scroll">
+        <div class="spatial-tag">Let's Connect</div>
+        <h2 class="section-title">Initiate Transmission</h2>
+        <p class="section-subtitle" style="margin-bottom: 2rem;">
+          Interested in AI research, computer vision engineering, or discussing software roles? 
+          Reach out directly or connect on LinkedIn.
+        </p>
+
+        <div class="contact-channels">
+          <a href="mailto:sriharidounde219@email.com" class="spatial-btn spatial-btn-primary contact-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            sriharidounde219@email.com
+          </a>
+
+          <button class="spatial-btn spatial-btn-glass contact-btn" id="copy-email-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+            Copy Email
+          </button>
+
+          <a href="https://linkedin.com/in/sriharidounde" target="_blank" rel="noopener noreferrer" class="spatial-btn spatial-btn-glass contact-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+
+        <p style="font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-mono); margin-top: 1.5rem;">
+          LOCATED IN HYDERABAD, TELANGANA, INDIA • OPEN TO GLOBAL OPPORTUNITIES
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer Space -->
+    <div style="height: 100px;"></div>
+
+  </div>
+
+  <!-- ====================================================================
+       INTERACTIVE PROJECT SIMULATOR MODAL (SPATIAL WINDOW)
+       ==================================================================== -->
+  <div class="spatial-modal-overlay" id="project-modal">
+    <div class="spatial-glass spatial-modal-window">
+      <div class="window-header">
+        <div class="window-dots">
+          <span class="dot dot-red" id="close-modal-dot"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <div class="window-title" id="modal-project-title">Project Live Simulator</div>
+        <button class="close-modal-btn" id="close-modal-btn" title="Close Window">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <div class="modal-content-inner" id="modal-dynamic-body">
+        <!-- Injected by js/projects.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       VISIONOS FLOATING BOTTOM DOCK
+       ==================================================================== -->
+  <div class="vision-dock-container">
+    <nav class="vision-dock" aria-label="Spatial Navigation Dock">
+      
+      <!-- Home -->
+      <a href="#hero" class="dock-item active" title="Spatial Hero Portal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span class="dock-tooltip">Portal</span>
+      </a>
+
+      <!-- About -->
+      <a href="#about" class="dock-item" title="About & Athlete">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span class="dock-tooltip">About</span>
+      </a>
+
+      <!-- Projects -->
+      <a href="#projects" class="dock-item" title="Interactive Projects">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        <span class="dock-tooltip">Projects</span>
+      </a>
+
+      <!-- Skills -->
+      <a href="#skills" class="dock-item" title="Skills & Tech">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        <span class="dock-tooltip">Skills</span>
+      </a>
+
+      <!-- Timeline -->
+      <a href="#timeline" class="dock-item" title="Timeline & Education">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span class="dock-tooltip">Timeline</span>
+      </a>
+
+      <!-- Distinctions -->
+      <a href="#achievements" class="dock-item" title="Tennis & Distinctions">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M4.5 4H19.5c0 4.5-3.5 8-7.5 8s-7.5-3.5-7.5-8Z"/></svg>
+        <span class="dock-tooltip">Honors</span>
+      </a>
+
+      <!-- Contact -->
+      <a href="#contact" class="dock-item" title="Contact Srihari">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="dock-tooltip">Contact</span>
+      </a>
+
+      <div class="dock-divider"></div>
+
+      <!-- Spatial Sound Effects Toggle -->
+      <button class="dock-item" id="sound-toggle-btn" title="Toggle Spatial Audio (Currently ON)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+        <span class="dock-tooltip">Sound Toggle</span>
+      </button>
+
+    </nav>
+  </div>
+
+  <!-- Scripts -->
+  <!-- 1. Three.js Core (Local bundle) -->
+  <script src="js/three.min.js"></script>
+  <!-- 2. Smooth Spatial Background -->
+  <script src="js/spatial-bg.js"></script>
+  <!-- 3. Web Audio & Speech Engine -->
+  <script src="js/speech.js"></script>
+  <!-- 4. 3D Face Hologram & Viseme Engine -->
+  <script src="js/face-3d.js"></script>
+  <!-- 5. Projects & Interactive Simulators -->
+  <script src="js/projects.js"></script>
+  <!-- 6. App Controller & Interactions -->
+  <script src="js/app.js"></script>
+
+</body>
+</html>
+
